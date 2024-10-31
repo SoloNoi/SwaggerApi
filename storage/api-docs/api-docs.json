@@ -1,0 +1,374 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "My doc API",
+        "version": "1.0"
+    },
+    "paths": {
+        "/api/": {},
+        "/api/notebook": {
+            "post": {
+                "tags": [
+                    "Notebook"
+                ],
+                "summary": "Создание",
+                "operationId": "01ab6faf21b6e1c61c4e92753754f03b",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "allOf": [
+                                    {
+                                        "properties": {
+                                            "full_name": {
+                                                "type": "string",
+                                                "example": "Ivan Ivanov Ivanovisch"
+                                            },
+                                            "company": {
+                                                "type": "string",
+                                                "example": "Фьюче"
+                                            },
+                                            "phone": {
+                                                "type": "string",
+                                                "example": "+70123456789"
+                                            },
+                                            "email": {
+                                                "type": "string",
+                                                "example": "example@gmail.com"
+                                            },
+                                            "birth_date": {
+                                                "type": "string",
+                                                "format": "date",
+                                                "example": "1990-01-01"
+                                            },
+                                            "photo": {
+                                                "type": "string",
+                                                "example": "example.jpeg"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Данные успешно занесены",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "full_name": {
+                                                    "type": "string",
+                                                    "example": "Ivan Ivanov Ivanovisch"
+                                                },
+                                                "company": {
+                                                    "type": "string",
+                                                    "example": "Фьюче"
+                                                },
+                                                "phone": {
+                                                    "type": "string",
+                                                    "example": "+70123456789"
+                                                },
+                                                "email": {
+                                                    "type": "string",
+                                                    "example": "example@gmail.com"
+                                                },
+                                                "birth_date": {
+                                                    "type": "string",
+                                                    "format": "date",
+                                                    "example": "1990-01-01"
+                                                },
+                                                "photo": {
+                                                    "type": "string",
+                                                    "example": "example.jpeg"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/notebook": {
+            "get": {
+                "tags": [
+                    "Notebook"
+                ],
+                "summary": "Получить список всех записей",
+                "operationId": "ddadc481df9b4820c25eace6094daed0",
+                "responses": {
+                    "200": {
+                        "description": "Список всех записей",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "id": {
+                                                "type": "integer",
+                                                "example": 1
+                                            },
+                                            "full_name": {
+                                                "type": "string",
+                                                "example": "Ivan Ivanov Ivanovisch"
+                                            },
+                                            "company": {
+                                                "type": "string",
+                                                "example": "Фьюче"
+                                            },
+                                            "phone": {
+                                                "type": "string",
+                                                "example": "+70123456789"
+                                            },
+                                            "email": {
+                                                "type": "string",
+                                                "example": "example@gmail.com"
+                                            },
+                                            "birth_date": {
+                                                "type": "string",
+                                                "format": "date",
+                                                "example": "1990-01-01"
+                                            },
+                                            "photo": {
+                                                "type": "string",
+                                                "example": "example.jpeg"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/notebook/{notebook}": {
+            "get": {
+                "tags": [
+                    "Notebook"
+                ],
+                "summary": "Получить запись по ID",
+                "operationId": "8e729330a735a6f3cedcff3103605d9b",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID записи",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Запись найдена",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer",
+                                            "example": 1
+                                        },
+                                        "full_name": {
+                                            "type": "string",
+                                            "example": "Ivan Ivanov Ivanovisch"
+                                        },
+                                        "company": {
+                                            "type": "string",
+                                            "example": "Фьюче"
+                                        },
+                                        "phone": {
+                                            "type": "string",
+                                            "example": "+70123456789"
+                                        },
+                                        "email": {
+                                            "type": "string",
+                                            "example": "example@gmail.com"
+                                        },
+                                        "birth_date": {
+                                            "type": "string",
+                                            "format": "date",
+                                            "example": "1990-01-01"
+                                        },
+                                        "photo": {
+                                            "type": "string",
+                                            "example": "example.jpeg"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Запись не найдена"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Notebook"
+                ],
+                "summary": "Удалить запись по ID",
+                "operationId": "b000f9d57073abe2bfc9d4e10a90be01",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID записи",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Запись успешно удалена",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "done"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Запись не найдена"
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Notebook"
+                ],
+                "summary": "Обновить запись",
+                "operationId": "31f86602be4efb61ec9f26cf3b3aca45",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID записи",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "full_name": {
+                                        "type": "string",
+                                        "example": "Ivan Ivanov Ivanovisch"
+                                    },
+                                    "company": {
+                                        "type": "string",
+                                        "example": "Фьюче"
+                                    },
+                                    "phone": {
+                                        "type": "string",
+                                        "example": "+70123456789"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "example": "example@gmail.com"
+                                    },
+                                    "birth_date": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "1990-01-01"
+                                    },
+                                    "photo": {
+                                        "type": "string",
+                                        "example": "example.jpeg"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Запись успешно обновлена",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer",
+                                            "example": 1
+                                        },
+                                        "full_name": {
+                                            "type": "string",
+                                            "example": "Ivan Ivanov Ivanovisch"
+                                        },
+                                        "company": {
+                                            "type": "string",
+                                            "example": "Фьюче"
+                                        },
+                                        "phone": {
+                                            "type": "string",
+                                            "example": "+70123456789"
+                                        },
+                                        "email": {
+                                            "type": "string",
+                                            "example": "example@gmail.com"
+                                        },
+                                        "birth_date": {
+                                            "type": "string",
+                                            "format": "date",
+                                            "example": "1990-01-01"
+                                        },
+                                        "photo": {
+                                            "type": "string",
+                                            "example": "example.jpeg"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Запись не найдена"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Notebook",
+            "description": "Notebook"
+        }
+    ]
+}
